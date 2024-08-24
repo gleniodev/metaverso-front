@@ -1,11 +1,11 @@
 import { HeroSection } from "@/components/sections/inicio/heroSection";
-import { SectionB } from "@/components/sections/inicio/sectionB";
+import { RendimentosSection } from "@/components/sections/inicio/rendimentosSection";
 
 export default function Inicio() {
   return (
     <>
       <HeroSection />
-      <SectionB />
+      <RendimentosSection />
     </>
   );
 }

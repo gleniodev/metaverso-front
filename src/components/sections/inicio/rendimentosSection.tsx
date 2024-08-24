@@ -2,9 +2,9 @@
 
 import { CardRendimentosHome } from "@/components/ui/cardRendimentosHome";
 
-export function SectionB() {
+export function RendimentosSection() {
   return (
-    <div className="relative w-full h-[60px] ">
+    <div className="relative h-[60px] w-full">
       <CardRendimentosHome />;
     </div>
   );
