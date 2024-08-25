@@ -20,10 +20,10 @@ export function HeroSection() {
         <div className="relative h-screen w-full md:w-1/2 lg:bottom-0 lg:w-[55%]">
           <Image
             src="/img-hero-home2.png"
-            alt="Logo símbolo"
+            alt="Homem com celular"
             width={829}
             height={879}
-            className="absolute right-0 top-0"
+            className="absolute right-0 top-0 md:top-8 lg:top-0"
           />
         </div>
       </div>

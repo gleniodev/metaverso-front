@@ -17,7 +17,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <header className="bg-metaverso-white fixed z-10 h-[80px] w-full">
+    <header className="bg-metaverso-white fixed z-10 w-full">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <div className="flex items-center">
           {/* Logo */}

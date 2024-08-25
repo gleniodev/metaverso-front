@@ -31,15 +31,14 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-metaverso-black text-metaverso-white mt-8 w-full">
-      <div className="container flex flex-col items-center justify-center gap-8 py-10 md:flex-row md:justify-around">
+    <footer className="bg-metaverso-black text-metaverso-white w-full">
+      <div className="container flex flex-col items-center justify-center gap-20 py-20 md:justify-around lg:flex-row">
         <div>
           <Image
             src="/mtv-ass-mono.svg"
             alt="Logo metaverso"
-            width={163}
+            width={187}
             height={75}
-            className="mr-2"
           />
         </div>
         <div className="justc flex flex-col items-center justify-center gap-8">
@@ -56,37 +55,29 @@ export function Footer() {
               </Link>
             ))}
           </nav>
-          <div className="hidden h-[1px] w-[120%] bg-blue-200 md:block"></div>{" "}
+          <div className="bg-metaverso-grey-2 hidden h-[1px] w-[120%] md:block"></div>{" "}
           {/*separador*/}
-          <div className="flex gap-8">
+          <div className="flex gap-10">
             {icons.map((icon) => (
               <Link href={icon.url} target="_blank">
-                <Image
-                  src={icon.src}
-                  alt={icon.name}
-                  width={32}
-                  height={32}
-                  className="mr-2"
-                />
+                <Image src={icon.src} alt={icon.name} width={32} height={32} />
               </Link>
             ))}
           </div>
         </div>
 
-        <div className="flex items-baseline gap-8 md:flex-col">
+        <div className="flex items-baseline gap-8">
           <Image
             src="/cvm-logo-mono.svg"
             alt="Logo símbolo"
-            width={90}
+            width={77.5}
             height={48}
-            className="mr-2"
           />
           <Image
             src="/anbima-logo-mono.svg"
             alt="Logo símbolo"
-            width={90}
+            width={77.5}
             height={48}
-            className="mr-2"
           />
         </div>
       </div>
