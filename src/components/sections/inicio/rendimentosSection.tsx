@@ -18,11 +18,11 @@ export function RendimentosSection() {
   return (
     <section className="bg-metaverso-grey-1 relative w-full py-20">
       <CardRendimentosHome />;
-      <div className="container mt-24 flex flex-col items-center gap-8 text-center lg:mt-16">
+      <div className="container mt-8 flex flex-col items-center gap-20 text-center lg:mt-0">
         <h1 className="text-2xl font-bold lg:text-4xl">
           Diversificação Inteligente
         </h1>
-        <p className="lg:text-2xl">
+        <p className="md:text-xl lg:text-2xl">
           Desenvolvemos estratégias de investimentos em aplicações
           diversificadas como:
         </p>
