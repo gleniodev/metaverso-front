@@ -31,7 +31,7 @@ export const Navbar = () => {
           <Image
             src="/mtv-ass-name.svg"
             alt="Logo nome"
-            width={240}
+            width={200}
             height={64}
             className="mr-2 sm:block md:hidden lg:block"
           />
