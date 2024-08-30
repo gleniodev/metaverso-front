@@ -10,22 +10,35 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { format, parseISO } from "date-fns";
 
 interface ChartData {
   name: string;
-  uv: number;
+  rendimento: number;
+  fullDate: string; // Nova propriedade para armazenar a data completa
 }
 
 export function AreaChartSection() {
   const [data, setData] = useState<ChartData[]>([]);
 
   useEffect(() => {
-    // Fetch datafeed
     const fetchData = async () => {
       try {
-        const response = await fetch("URL-DTAFEED");
+        const response = await fetch(
+          "https://plataforma.metaverso.ltda/profits/datafeed",
+        );
         const result = await response.json();
-        setData(result);
+
+        // Mapear as propriedades "date" e "interest" para "name", "rendimento", e "fullDate"
+        const mappedData = result.map(
+          (item: { date: string; interest: number }) => ({
+            name: format(parseISO(item.date), "dd/MM"), // Formata como "dd/MM"
+            rendimento: item.interest,
+            fullDate: format(parseISO(item.date), "dd/MM/yy"), // Formata como "dd/MM/yy"
+          }),
+        );
+
+        setData(mappedData);
       } catch (error) {
         console.error("Erro ao buscar dados do feed:", error);
       }
@@ -42,7 +55,7 @@ export function AreaChartSection() {
       <ResponsiveContainer width="100%" height={400}>
         <AreaChart data={data}>
           <defs>
-            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="colorRendimento" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#00c6ff" stopOpacity={0.8} />
               <stop offset="95%" stopColor="#0072ff" stopOpacity={0.2} />
             </linearGradient>
@@ -50,13 +63,17 @@ export function AreaChartSection() {
           <XAxis dataKey="name" />
           <YAxis />
           <CartesianGrid strokeDasharray="3 3" />
-          <Tooltip />
+          <Tooltip
+            labelFormatter={(value) =>
+              data.find((item) => item.name === value)?.fullDate || value
+            }
+          />
           <Area
             type="monotone"
-            dataKey="uv"
+            dataKey="rendimento"
             stroke="#0072ff"
             fillOpacity={1}
-            fill="url(#colorUv)"
+            fill="url(#colorRendimento)"
           />
         </AreaChart>
       </ResponsiveContainer>

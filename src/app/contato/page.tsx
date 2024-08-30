@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { User, AtSign, PencilLine, BookText, PenLine } from "lucide-react";
+import WhatsAppButton from "@/components/ui/whatsappButton";
 
 const formSchema = z.object({
   name: z
@@ -89,6 +90,9 @@ export default function FaleConosco() {
                 width={187}
                 height={75}
               />
+              <div className="md:hidden">
+                <WhatsAppButton />
+              </div>
             </div>
           </div>
         </div>
