@@ -102,7 +102,7 @@ export function BarChartSection() {
       >
         {data.map((monthData, index) => (
           <SwiperSlide key={index} className="flex items-center justify-center">
-            <div className="flex h-64 w-[90%] flex-col px-2 md:h-80 md:w-[90%] lg:h-96">
+            <div className="flex h-64 w-[90%] flex-col px-2 md:h-80 md:w-[80%] lg:h-96">
               {" "}
               {/* Adiciona padding para evitar overflow */}
               <ResponsiveContainer width="100%" height="100%">

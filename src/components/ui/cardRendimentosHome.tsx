@@ -1,20 +1,21 @@
 "use client";
 
 const rendimentos = [
-  { rend: "8%", mes: "JAN" },
-  { rend: "5%", mes: "FEV" },
-  { rend: "7%", mes: "MAR" },
-  { rend: "2%", mes: "ABR" },
-  { rend: "4%", mes: "MAI" },
-  { rend: "9%", mes: "JUN" },
-  { rend: "1%", mes: "JUL" },
+  { rend: "6,3%", mes: "JAN" },
+  { rend: "5.68%", mes: "FEV" },
+  { rend: "6,29%", mes: "MAR" },
+  { rend: "6,83%", mes: "ABR" },
+  { rend: "5,61%", mes: "MAI" },
+  { rend: "5,43%", mes: "JUN" },
+  { rend: "6,05%", mes: "JUL" },
+  { rend: "6,12%", mes: "AGO" },
 ];
 
 export function CardRendimentosHome() {
   return (
     <>
       <div className="bg-metaverso-black absolute -top-10 left-0 right-0 mx-auto flex h-[90px] w-[90%] items-center justify-start overflow-hidden rounded-2xl p-2 md:w-[70%] lg:relative lg:-top-28 lg:h-[120px] lg:w-[60%]">
-        <div className="animate-marquee flex whitespace-nowrap">
+        <div className="animate-marquee flex items-center justify-center whitespace-nowrap">
           {rendimentos.map((item) => (
             <div
               key={item.mes}
