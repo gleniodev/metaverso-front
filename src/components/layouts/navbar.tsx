@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { Button } from "../ui/button";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -17,7 +18,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <header className="bg-metaverso-white fixed z-10 w-full">
+    <header className="bg-metaverso-white fixed z-50 w-full">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <div className="flex items-center">
           {/* Logo */}
@@ -55,16 +56,18 @@ export const Navbar = () => {
         </nav>
 
         {/* entrar e cadastrar para desktop */}
-        <div className="hidden space-x-6 font-bold md:flex">
-          <Link href="/login" passHref>
+        <div className="hidden items-center space-x-6 font-bold md:flex">
+          <Link href="https://plataforma.metaverso.ltda/login" passHref>
             <span className="text-metaverso-black hover:text-metaverso-blue-3 cursor-pointer">
               Entrar
             </span>
           </Link>
-          <Link href="/cadastro" passHref>
-            <span className="bg-metaverso-blue-4 text-metaverso-white hover:bg-metaverso-blue-3 cursor-pointer rounded-md px-4 py-2">
-              Cadastrar
-            </span>
+
+          <Link
+            href={"https://plataforma.metaverso.ltda/register"}
+            target="_blank"
+          >
+            <Button size={"sm"}>Cadastrar</Button>
           </Link>
         </div>
 
@@ -95,37 +98,39 @@ export const Navbar = () => {
       </div>
       {/* Menu para mobile */}
       {isMobileMenuOpen && (
-        <nav className="bg-metaverso-white absolute -z-10 flex h-screen w-full flex-col items-center gap-8 px-4 pb-2 pt-28 md:hidden">
-          {navLinks.map((link) => (
-            <Link key={link.name} href={link.path} passHref>
+        <nav className="bg-metaverso-white absolute -z-10 flex h-screen w-full flex-col items-center justify-start gap-16 px-4 py-20 text-2xl md:hidden">
+          <div className="flex flex-col items-center gap-8">
+            {navLinks.map((link) => (
+              <Link key={link.name} href={link.path} passHref>
+                <span
+                  className={`block py-2 ${
+                    pathname === link.path
+                      ? "text-metaverso-blue-4 font-bold"
+                      : "text-metaverso-black font-bold"
+                  } hover:text-metaverso-blue-3 cursor-pointer`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="flex items-center justify-center gap-8">
+            <Link href="https://plataforma.metaverso.ltda/login" passHref>
               <span
-                className={`block py-2 ${
-                  pathname === link.path
-                    ? "text-metaverso-blue-4 font-bold"
-                    : "text-metaverso-black font-bold"
-                } hover:text-metaverso-blue-3 cursor-pointer`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </span>
-            </Link>
-          ))}
-          <div className="flex gap-8">
-            <Link href="/login" passHref>
-              <span
-                className="text-metaverso-black hover:text-metaverso-blue-3 block cursor-pointer py-2"
+                className="text-metaverso-black hover:text-metaverso-blue-3 block cursor-pointer py-2 font-bold"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Entrar
               </span>
             </Link>
-            <Link href="/cadastro" passHref>
-              <span
-                className="bg-metaverso-blue-4 text-metaverso-white hover:bg-metaverso-blue-3 block cursor-pointer rounded-md py-2 text-center"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+            <Link
+              href={"https://plataforma.metaverso.ltda/register"}
+              target="_blank"
+            >
+              <Button size={"lg"} onClick={() => setMobileMenuOpen(false)}>
                 Cadastrar
-              </span>
+              </Button>
             </Link>
           </div>
         </nav>

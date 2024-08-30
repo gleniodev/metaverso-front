@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -15,7 +16,12 @@ export function HeroSection() {
           <p className="text-metaverso-black font-medium lg:text-[20px]">
             Rendimentos Reais, Transparência e Lucros Acima da Média.
           </p>
-          <Button>Comece agora</Button>
+          <Link
+            href={"https://plataforma.metaverso.ltda/register"}
+            target="_blank"
+          >
+            <Button>Invista agora</Button>
+          </Link>
         </div>
         <div className="relative h-screen w-full md:w-1/2 lg:bottom-0 lg:w-[55%]">
           <Image

@@ -28,7 +28,12 @@ const config = {
           "grey-2": "#BBBBBB",
           "grey-1": "#F2F2F2",
           "white": "#FFFFFF",
-          "black": "#000000"
+          "black": "#000000",
+          "gradient-blue": "linear-gradient(180deg, #003A6F 10%, #0195FF 100%)"
+        },
+        backgroundImage: {
+          "gradient-metaverso-blue":
+            "linear-gradient(180deg, #003A6F 10%, #0195FF 100%)",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
