@@ -13,20 +13,19 @@ export function Footer() {
 
   const icons = [
     {
-      name: "icon facebook",
-      src: "/icon-face.svg",
-      url: "https://www.facebook.com",
+      name: "icon youtube",
+      src: "/icon-youtube.svg",
+      url: "https://www.youtube.com/@JonathanBispo10",
     },
     {
       name: "icon instagram",
       src: "/icon-insta.svg",
-      url: "https://www.instagram.com",
+      url: "https://www.instagram.com/jonathan.bispo.10/",
     },
-    { name: "icon x", src: "/icon-x.svg", url: "https://www.x.com" },
     {
-      name: "icon youtube",
-      src: "/icon-youtube.svg",
-      url: "https://www.youtube.com",
+      name: "icon tiktok",
+      src: "/icon-tiktok.svg",
+      url: "https://www.tiktok.com/@livedaytrade1",
     },
   ];
 
