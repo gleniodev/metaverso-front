@@ -79,8 +79,7 @@ export default function FaleConosco() {
               </div>
               <div>
                 <h3 className="text-metaverso-black font-bold">Telefones</h3>
-                <p className="text-metaverso-black">(99) 9999-9999</p>
-                <p className="text-metaverso-black">(99) 9999-9999</p>
+                <p className="text-metaverso-black">(65) 98125-6222</p>
               </div>
             </div>
             <div className="">
