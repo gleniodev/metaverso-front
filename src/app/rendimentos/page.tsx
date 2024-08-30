@@ -18,10 +18,10 @@ export default function Rendimentos() {
       </div>
 
       {/* Seção de Conteúdo */}
-      <div className="container mx-auto px-4 py-12 lg:py-24">
-        <div className="text-metaverso-black mb-12 flex flex-col gap-8 text-center">
-          <div className="b-20 container flex flex-col items-center justify-center gap-20 pb-20 text-center">
-            <p className="text-metaverso-black text-xl font-bold lg:text-2xl">
+      <div className="container mx-auto px-4 pt-10 lg:pt-20">
+        <div className="text-metaverso-black mb-12 flex flex-col gap-8 text-center lg:mb-0">
+          <div className="b-20 container flex flex-col items-center justify-center gap-20 text-center">
+            <p className="text-metaverso-black text-xl lg:text-2xl">
               Descubra como nossos rendimentos superam o mercado e veja seus
               investimentos crescerem mais rápido com a Metaverso.
             </p>
