@@ -16,20 +16,36 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { User, AtSign, PencilLine, BookText, PenLine } from "lucide-react";
+import {
+  User,
+  AtSign,
+  PencilLine,
+  BookText,
+  PenLine,
+  Phone,
+} from "lucide-react";
 import WhatsAppButton from "@/components/ui/whatsappButton";
 
 const formSchema = z.object({
   name: z
     .string()
-    .min(2, { message: "O nome deve ter pelo menos 2 caracteres" }),
+    .min(2, { message: "O nome deve ter pelo menos 2 caracteres" })
+    .max(100)
+    .regex(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/, {
+      message: "O nome deve conter apenas letras",
+    }),
   email: z.string().email({ message: "Por favor, insira um email válido" }),
-  subject: z
+  phone: z
     .string()
-    .min(3, { message: "O assunto deve ter pelo menos 3 caracteres" }),
+    .min(11, { message: "O telefone deve ter pelo menos 11 caracteres" })
+    .max(11)
+    .regex(/^[0-9\s().-]+$/, {
+      message: "O telefone deve conter apenas números e caracteres permitidos",
+    }),
   message: z
     .string()
-    .min(10, { message: "A mensagem deve ter pelo menos 10 caracteres" }),
+    .min(10, { message: "A mensagem deve ter pelo menos 10 caracteres" })
+    .max(250),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -43,21 +59,32 @@ export default function FaleConosco() {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    try {
+      const res = await fetch(
+        "https://plataforma.metaverso.ltda/public/form/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        },
+      );
 
-    setIsSubmitting(false);
+      if (!res.ok) {
+        throw new Error("Erro ao enviar o formulário");
+      }
 
-    if (res.ok) {
-      form.reset();
-      alert("Mensagem enviada com sucesso!");
-    } else {
-      alert("Falha ao enviar a mensagem.");
+      const result = await res.json();
+      console.log(result);
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      } else {
+        console.error("Erro desconhecido:", error);
+      }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -72,7 +99,7 @@ export default function FaleConosco() {
                 Fale <span className="text-metaverso-blue-4">Conosco!</span>
               </h2>
             </div>
-            <div className="lg: flex flex-col gap-8 text-xl md:text-2xl">
+            <div className="flex-col gap-8 text-xl md:text-2xl">
               <div>
                 <h3 className="text-metaverso-black font-bold">E-mail</h3>
                 <p className="text-metaverso-black">contato@metaverso.ltda</p>
@@ -120,6 +147,7 @@ export default function FaleConosco() {
                           />
                           <Input
                             {...field}
+                            value={field.value ?? ""}
                             placeholder="Nome"
                             className="pl-10"
                           />
@@ -142,6 +170,7 @@ export default function FaleConosco() {
                           />
                           <Input
                             {...field}
+                            value={field.value ?? ""}
                             placeholder="E-mail"
                             className="pl-10"
                           />
@@ -153,18 +182,19 @@ export default function FaleConosco() {
                 />
                 <FormField
                   control={form.control}
-                  name="subject"
+                  name="phone"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
                         <div className="relative flex items-center">
-                          <PenLine
+                          <Phone
                             className="absolute left-3 text-gray-400"
                             size={20}
                           />
                           <Input
                             {...field}
-                            placeholder="Assunto"
+                            value={field.value ?? ""}
+                            placeholder="Telefone"
                             className="pl-10"
                           />
                         </div>
@@ -186,6 +216,7 @@ export default function FaleConosco() {
                           />
                           <Textarea
                             {...field}
+                            value={field.value ?? ""}
                             placeholder="Mensagem"
                             className="pl-10"
                           />

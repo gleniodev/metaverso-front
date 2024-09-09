@@ -34,8 +34,12 @@ export function BarChartSection() {
         );
         const result = await response.json();
 
-        const cdiValues = [0.97, 0.8, 0.83, 0.89, 0.83, 0.79, 0.91, 1.14]; // CDI janeiro a agosto 2024
-        const poupancaValues = [0.58, 0.5, 0.53, 0.6, 0.58, 0.53, 0.57, 0.57]; // Poupança janeiro a agosto 2024
+        const cdiValues = [
+          0.97, 0.8, 0.83, 0.89, 0.83, 0.79, 0.91, 1.14, 0.89, 0.92, 1.0, 0.97,
+        ]; // CDI janeiro a agosto 2024
+        const poupancaValues = [
+          0.58, 0.5, 0.53, 0.6, 0.58, 0.53, 0.57, 0.57, 0.64, 0.66, 0.73, 0.69,
+        ]; // Poupança janeiro a agosto 2024
 
         const monthNames = [
           "JAN",
