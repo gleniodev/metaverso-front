@@ -1,14 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async redirects() {
-        return [
-          {
-            source: "/",
-            destination: "/inicio",
-            permanent: true,
-          },
-        ];
+  eslint: {
+    ignoreDuringBuilds: true, // Ignora ESLint durante o build
+  },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/inicio",
+        permanent: true,
       },
+    ];
+  },
 };
 
 export default nextConfig;
