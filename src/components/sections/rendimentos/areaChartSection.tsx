@@ -31,10 +31,10 @@ export function AreaChartSection() {
 
         // Mapear as propriedades "date" e "interest" para "name", "rendimento", e "fullDate"
         const mappedData = result.last30.map(
-          (item: { month: string; interest: number }) => ({
-            name: format(parseISO(item.month), "dd/MM"), // Formata como "dd/MM"
+          (item: { date: string; interest: number }) => ({
+            name: format(parseISO(item.date), "dd/MM"), // Formata como "dd/MM"
             rendimento: item.interest,
-            fullDate: format(parseISO(item.month), "dd/MM/yy"), // Formata como "dd/MM/yy"
+            fullDate: format(parseISO(item.date), "dd/MM/yy"), // Formata como "dd/MM/yy"
           }),
         );
 

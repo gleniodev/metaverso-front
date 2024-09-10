@@ -11,10 +11,10 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "INÍCIO", path: "/inicio" },
-    { name: "SOBRE", path: "/sobre" },
-    { name: "RENDIMENTOS", path: "/rendimentos" },
-    { name: "CONTATO", path: "/contato" },
+    { id: 1, name: "INÍCIO", path: "/inicio" },
+    { id: 2, name: "SOBRE", path: "/sobre" },
+    { id: 3, name: "RENDIMENTOS", path: "/rendimentos" },
+    { id: 4, name: "CONTATO", path: "/contato" },
   ];
 
   return (
@@ -26,14 +26,14 @@ export const Navbar = () => {
             src="/mtv-ass-sm.svg"
             alt="Logo símbolo"
             width={64}
-            height={64}
+            height={50}
             className="mr-2"
           />
           <Image
             src="/mtv-ass-name.svg"
             alt="Logo nome"
             width={200}
-            height={64}
+            height={40}
             className="mr-2 sm:block md:hidden lg:block"
           />
         </div>
@@ -41,7 +41,7 @@ export const Navbar = () => {
         {/* Menu para desktop */}
         <nav className="hidden space-x-6 md:flex">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.path} passHref>
+            <Link key={link.id} href={link.path} passHref>
               <span
                 className={`${
                   pathname === link.path
@@ -101,7 +101,7 @@ export const Navbar = () => {
         <nav className="bg-metaverso-white absolute -z-10 flex h-screen w-full flex-col items-center justify-start gap-16 px-4 py-20 text-2xl md:hidden">
           <div className="flex flex-col items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.path} passHref>
+              <Link key={link.id} href={link.path} passHref>
                 <span
                   className={`block py-2 ${
                     pathname === link.path

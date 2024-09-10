@@ -57,8 +57,8 @@ export function BarChartSection() {
         ];
 
         const mappedData = result.monthly.map(
-          (item: { date: string; interest: number }, index: number) => {
-            const [month, year] = item.date.split("-");
+          (item: { month: string; interest: number }, index: number) => {
+            const [month, year] = item.month.split("-");
 
             return {
               name: `${monthNames[parseInt(month) - 1]}-${year.slice(-2)}`, // Formatar data como "MMM-YY"
