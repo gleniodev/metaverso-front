@@ -1,14 +1,14 @@
 "use client";
 
 const rendimentos = [
-  { rend: "6,3%", mes: "JAN" },
-  { rend: "5.68%", mes: "FEV" },
-  { rend: "6,29%", mes: "MAR" },
-  { rend: "6,83%", mes: "ABR" },
-  { rend: "5,61%", mes: "MAI" },
-  { rend: "5,43%", mes: "JUN" },
-  { rend: "6,05%", mes: "JUL" },
-  { rend: "6,12%", mes: "AGO" },
+  { id: 1, rend: "6,3%", mes: "JAN" },
+  { id: 2, rend: "5.68%", mes: "FEV" },
+  { id: 3, rend: "6,29%", mes: "MAR" },
+  { id: 4, rend: "6,83%", mes: "ABR" },
+  { id: 5, rend: "5,61%", mes: "MAI" },
+  { id: 6, rend: "5,43%", mes: "JUN" },
+  { id: 7, rend: "6,05%", mes: "JUL" },
+  { id: 8, rend: "6,12%", mes: "AGO" },
 ];
 
 export function CardRendimentosHome() {
@@ -18,7 +18,7 @@ export function CardRendimentosHome() {
         <div className="animate-marquee flex items-center justify-center whitespace-nowrap">
           {rendimentos.map((item) => (
             <div
-              key={item.mes}
+              key={item.id}
               className="mx-4 flex min-w-[50px] flex-col items-center lg:min-w-[100px] lg:text-2xl"
             >
               <span className="text-metaverso-blue-4 font-bold">

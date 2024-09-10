@@ -94,8 +94,8 @@ export default function Sobre() {
             <Image
               src="/bg-diferencial.png"
               alt="Logo símbolo"
-              width={518}
-              height={454}
+              width={520}
+              height={455}
               className="absolute -bottom-14 right-0 opacity-80 lg:top-10"
             />
           </div>

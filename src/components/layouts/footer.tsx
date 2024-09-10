@@ -5,10 +5,10 @@ import Image from "next/image";
 
 export function Footer() {
   const navLinks = [
-    { name: "INÍCIO", path: "/inicio" },
-    { name: "SOBRE", path: "/sobre" },
-    { name: "RENDIMENTOS", path: "/rendimentos" },
-    { name: "CONTATO", path: "/contato" },
+    { id: 1, name: "INÍCIO", path: "/inicio" },
+    { id: 2, name: "SOBRE", path: "/sobre" },
+    { id: 3, name: "RENDIMENTOS", path: "/rendimentos" },
+    { id: 4, name: "CONTATO", path: "/contato" },
   ];
 
   const icons = [
@@ -37,13 +37,13 @@ export function Footer() {
             src="/mtv-ass-mono.svg"
             alt="Logo metaverso"
             width={187}
-            height={75}
+            height={87}
           />
         </div>
         <div className="justc flex flex-col items-center justify-center gap-8">
           <nav className="flex flex-col items-center justify-center gap-8 md:flex-row">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.path} passHref>
+              <Link key={link.id} href={link.path} passHref>
                 <span
                   className={
                     "hover:text-metaverso-grey-2 cursor-pointer font-medium"

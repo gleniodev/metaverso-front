@@ -114,7 +114,7 @@ export default function FaleConosco() {
                 src="/mtv-ass-md.svg"
                 alt="Logo metaverso"
                 width={187}
-                height={75}
+                height={102}
               />
               <div className="md:hidden">
                 <WhatsAppButton />
