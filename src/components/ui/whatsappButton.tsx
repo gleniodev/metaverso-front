@@ -6,7 +6,7 @@ import React from "react";
 export function WhatsAppButton() {
   return (
     <Link
-      href="https://wa.me/556596182980"
+      href="https://wa.me/5565992984215"
       target="_blank"
       rel="noopener noreferrer"
     >
