@@ -10,6 +10,8 @@ const rendimentos = [
   { id: 7, rend: "6,05%", mes: "JUL" },
   { id: 8, rend: "6,37%", mes: "AGO" },
   { id: 9, rend: "5,25%", mes: "SET" },
+  { id: 9, rend: "4,92%", mes: "OUT" },
+  { id: 9, rend: "3,13%", mes: "NOV" },
 ];
 
 export function CardRendimentosHome() {
