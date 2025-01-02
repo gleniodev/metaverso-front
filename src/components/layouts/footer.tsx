@@ -66,18 +66,6 @@ export function Footer() {
         </div>
 
         <div className="flex items-baseline gap-8">
-          <Image
-            src="/cvm-logo-mono.svg"
-            alt="Logo símbolo"
-            width={77.5}
-            height={48}
-          />
-          <Image
-            src="/anbima-logo-mono.svg"
-            alt="Logo símbolo"
-            width={77.5}
-            height={48}
-          />
         </div>
       </div>
       <div className="pb-8">
