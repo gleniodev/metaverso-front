@@ -23,7 +23,9 @@ export function RendimentosSection() {
           Diversificação Inteligente
         </h1>
         <p className="md:text-xl lg:text-2xl">
-          Desenvolvemos estratégias de investimentos em aplicações
+          Desenvolvemos estratégias de investimentos em aplicaç
+          
+          ões
           diversificadas como:
         </p>
         {/* CARDS */}

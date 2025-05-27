@@ -39,6 +39,8 @@ export function BarChartSection() {
         ]; // CDI janeiro a agosto 2024
         const poupancaValues = [
           0.58, 0.5, 0.53, 0.6, 0.58, 0.53, 0.57, 0.57, 0.56, 0.59, 0.56, 0.58,
+          
+          
         ]; // Poupança janeiro a agosto 2024
 
         const monthNames = [
